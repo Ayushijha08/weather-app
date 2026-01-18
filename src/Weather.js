@@ -4,13 +4,15 @@ import './weather.css'
 const Weather = () => {
   const [searchquery, setSearchQuery] = useState("");
   const [weather, setWeather] = useState({});
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cfea2e09db2fbf0d54bb8b880900febf&units=metric`,
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`,
         )
         .then((res) => {
           console.log(res.data, "response");
@@ -22,7 +24,7 @@ const Weather = () => {
   function handleSearch() {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${searchquery}&appid=cfea2e09db2fbf0d54bb8b880900febf&units=metric`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${searchquery}&appid=${API_KEY}&units=metric`,
       )
       .then((res) => setWeather(res.data))
       .catch((err) => console.log(err, "err"));
