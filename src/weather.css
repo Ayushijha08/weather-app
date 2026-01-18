@@ -1,0 +1,133 @@
+/* Full page center */
+.weather-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8dd3e8, #4b5fb6);
+  
+  font-family: Arial, sans-serif;
+}
+.sun-sticker {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+
+  width: 190px;
+  height: 190px;
+
+  background-image: url("./sun.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  pointer-events: none; /* acts like sticker */
+  animation: floatSun 4s ease-in-out infinite;
+}
+.moon {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+
+  width: 190px;
+  height: 190px;
+
+  background-image: url("./moons.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  pointer-events: none; /* acts like sticker */
+  animation: floatSun 4s ease-in-out infinite;
+}
+
+
+@keyframes floatSun {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Card */
+.weather-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Input */
+.weather-card input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Button */
+.weather-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.weather-card button:hover {
+  background-color: #43a047;
+}
+
+/* Weather text */
+.weather-card h1 {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #333;
+}
+/* ===== NIGHT THEME ===== */
+.weather-container.night {
+  /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+  background-image: url("./star.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+/* Card */
+.weather-container.night .weather-card {
+  background: #214b65;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Input */
+.weather-container.night input {
+  background: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.weather-container.night input::placeholder {
+  color: #bbb;
+}
+
+/* Button */
+.weather-container.night button {
+  background-color: #1b323e;
+}
+
+.weather-container.night button:hover {
+  background-color: #1976d2;
+}
+
+/* Text */
+.weather-container.night h1 {
+  color: #e0e0e0;
+}
