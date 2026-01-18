@@ -42,8 +42,7 @@ const currentTime = Date.now();
 const rise = weather?.sys?.sunrise * 1000;
 const set = weather?.sys?.sunset * 1000;
 
-const isDay = true
-// currentTime >= rise && currentTime <set;
+const isDay = currentTime >= rise && currentTime <set;
 
   return (
     <div className={`weather-container ${isDay ? "" : "night"}`}>

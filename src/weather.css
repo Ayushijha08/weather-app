@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #8dd3e8, #4b5fb6);
-  
+   position: relative;
   font-family: Arial, sans-serif;
 }
 .sun-sticker {
@@ -130,4 +130,41 @@
 /* Text */
 .weather-container.night h1 {
   color: #e0e0e0;
+}
+@media (max-width: 600px) {
+
+  /* Stickers smaller on phones */
+  .sun-sticker,
+  .moon {
+    width: 110px;
+    height: 110px;
+    top: 15px;
+    left: 15px;
+  }
+
+  /* Card spacing */
+  .weather-card {
+    padding: 18px;
+    width: 85%;
+    max-width: 320px;
+    border-radius: 10px;
+  }
+
+  /* Input & button touch friendly */
+  .weather-card input {
+    width: 95%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .weather-card button {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* Text size adjustment */
+  .weather-card h3 {
+    font-size: 14px;
+  }
+
 }
