@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #8dd3e8, #4b5fb6);
+  background: linear-gradient(135deg, #090979, #00D4FF);
    position: relative;
   font-family: Arial, sans-serif;
 }
@@ -48,15 +48,34 @@
 
 /* Card */
 .weather-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 350px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 350px;
+  min-height: 420px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+justify-content: space-between;
 }
-
+.weather-item {
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.weather-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+.weather-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 equal columns */
+  gap: 10px 20px; /* row gap and column gap */
+  margin-top: 20px;
+}
 /* Input */
 .weather-card input {
   width: 90%;
@@ -71,7 +90,7 @@
 .weather-card button {
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #0f177ab4;
   color: white;
   border: none;
   border-radius: 6px;
@@ -81,15 +100,12 @@
 }
 
 .weather-card button:hover {
-  background-color: #43a047;
+  background-color: #44dafc;
 }
 
 /* Weather text */
-.weather-card h1 {
-  font-size: 18px;
-  margin: 8px 0;
-  color: #333;
-}
+
+
 /* ===== NIGHT THEME ===== */
 .weather-container.night {
   /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
@@ -102,9 +118,17 @@
 
 /* Card */
 .weather-container.night .weather-card {
-  background: #214b65;
-  color: #ffffff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+   background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 350px;
+  min-height: 420px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+justify-content: space-between;
 }
 
 /* Input */
@@ -120,12 +144,11 @@
 
 /* Button */
 .weather-container.night button {
-  background-color: #1b323e;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
 }
 
 .weather-container.night button:hover {
-  background-color: #1976d2;
-}
+ background: linear-gradient(135deg, #0096c7, #0056d6);}
 
 /* Text */
 .weather-container.night h1 {

@@ -3,6 +3,7 @@ import axios from "axios";
 import './weather.css'
 const Weather = () => {
   const [searchquery, setSearchQuery] = useState("");
+  
   const [weather, setWeather] = useState({});
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -20,6 +21,7 @@ const Weather = () => {
         })
         .catch((err) => console.log("err", err));
     });
+
   }, []);
   function handleSearch() {
     axios
@@ -57,17 +59,24 @@ const isDay = currentTime >= rise && currentTime <set;
         value={searchquery}
       />
       <button onClick={handleSearch}>search </button>
-      <h3>Temp: {weather?.main?.temp} °C</h3>
-      <h3>city Name:{weather?.name}</h3>
-      <h3>Description:{weather?.weather?.[0]?.description}</h3>
-      <h3>Humidity: {weather?.main?.humidity}%</h3>
-<h3>Wind: {weather?.wind?.speed} m/s</h3>
-<h3>Pressure: {weather?.main?.pressure} hPa</h3>
-<h3>sunrise:{sunrise}</h3>
-<h3>sunset:{sunset}</h3>
-<h3>Visiblity:{weather?.visibility}</h3>
+        <div className="weather-details">
+      <h3 className="weather-item ">Temperature: {weather?.main?.temp} °C</h3>
+      {/* <h3 className="weather-item ">Country: {weather?.sys?.country}</h3> */}
 
+      <h3 className="weather-item ">city Name: {weather?.name}</h3>
+      <h3 className="weather-item ">Description: {weather?.weather?.[0]?.description}</h3>
+      <h3 className="weather-item ">Humidity: {weather?.main?.humidity}%</h3>
+<h3 className="weather-item ">Wind Speed: {weather?.wind?.speed} m/s</h3>
+<h3 className="weather-item ">Wind Direction: {weather?.wind?.deg}°</h3>
+<h3 className="weather-item ">Pressure: {weather?.main?.pressure} hPa</h3>
+<h3 className="weather-item ">Latitude: {weather?.coord?.lat}</h3>
+<h3 className="weather-item ">Longitude: {weather?.coord?.lon}</h3>
 
+<h3 className="weather-item ">Sunrise:{sunrise}</h3>
+<h3 className="weather-item ">Sunset:{sunset}</h3>
+<h3 className="weather-item ">Visiblity:{weather?.visibility/1000}km</h3>
+
+</div>
     </div>
     </div>
   );
