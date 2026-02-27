@@ -65,8 +65,10 @@ const isDay = currentTime >= rise && currentTime <set;
 <h3>Pressure: {weather?.main?.pressure} hPa</h3>
 <h3>sunrise:{sunrise}</h3>
 <h3>sunset:{sunset}</h3>
+<h3>Visiblity:{weather?.visibility}</h3>
 
-      </div>
+
+    </div>
     </div>
   );
 };
