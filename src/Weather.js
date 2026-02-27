@@ -63,7 +63,7 @@ const isDay = currentTime >= rise && currentTime <set;
       <h3 className="weather-item ">Temperature: {weather?.main?.temp} °C</h3>
       {/* <h3 className="weather-item ">Country: {weather?.sys?.country}</h3> */}
 
-      <h3 className="weather-item ">city Name: {weather?.name}</h3>
+      <h3 className="weather-item ">City: {weather?.name}</h3>
       <h3 className="weather-item ">Description: {weather?.weather?.[0]?.description}</h3>
       <h3 className="weather-item ">Humidity: {weather?.main?.humidity}%</h3>
 <h3 className="weather-item ">Wind Speed: {weather?.wind?.speed} m/s</h3>

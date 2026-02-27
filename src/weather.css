@@ -74,7 +74,7 @@ justify-content: space-between;
 .weather-details {
   display: grid;
   grid-template-columns: 1fr 1fr;  /* 2 equal columns */
-  gap: 10px 20px; /* row gap and column gap */
+  gap: 2px 12px; /* row gap and column gap */
   margin-top: 20px;
 }
 /* Input */
